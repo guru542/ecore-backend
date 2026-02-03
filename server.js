@@ -1,17 +1,15 @@
-const express = require("express");
-const cors = require("cors");
-const nodemailer = require("nodemailer");
-require("dotenv").config();
+import express from "express";
+import cors from "cors";
+import nodemailer from "nodemailer";
 
 const app = express();
+
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://ecore-site-hys6.vercel.app"
-  ],
+  origin: "https://ecore-site-hys6.vercel.app",
   methods: ["GET", "POST"],
   credentials: true
 }));
+
 app.use(express.json());
 
 app.post("/send-email", async (req, res) => {
