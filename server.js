@@ -4,11 +4,7 @@ import nodemailer from "nodemailer";
 
 const app = express();
 
-app.use(cors({
-  origin: "https://ecore-site-hys6.vercel.app",
-  methods: ["GET", "POST"],
-  credentials: true
-}));
+app.use(cors());
 
 app.use(express.json());
 
